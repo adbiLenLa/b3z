@@ -1,0 +1,195 @@
+#!/usr/bin/perl
+#
+#
+#*--------------------------------*
+#	_cft_1gnf4_93_:
+#	base-n clock mechanism
+#	written for cfilorux and ds zodiac oy_inc
+#	by john david jones
+#	copyright_2013:ds_zodiac_oyinc:all_rights_reserved::
+#	_cft:_1gnf6_0pc5k::
+#	
+#*--------------------------------*
+#cfilorux, clock, base-n integer conversion
+#ui._:davidjones
+#copyright 2012, ds_zodiac_inc., all_rights_reserved
+#*---------------------------------*
+#	_cft_118te_93_:
+#	_1gnq6_lyfa5:this was the last day in the _1gn series:
+#	john david jones: ds zodiac oy_inc::
+#----------------------------------*
+{use integer;
+# cft1192jb4_17173141506v_11922iaj__johndavidjones
+# adding support for arbitrary sword tables
+#	@_st=(0 .. 9, 'a' .. 'z');
+        @_st			=	($ARGV[2] ne '') ? split(//,$ARGV[2]) : (0 .. 9, 'a' .. 'z'); 
+	@_cd0		=	();
+	@_gf0		=	();	#gamma factor
+	$_gf0[0]	=	0;
+	$_gf0[1]	=	0;
+	$_cd0[0]		=	($ARGV[0] ne '') ? int($ARGV[0]) : 5; #digits in fractional day
+	$_cd0[1]		=	($ARGV[1] > 0) ? int($ARGV[1]) : ($#_st + 1); #base of calculation
+        
+
+	@_a0=();	#storage for data pertaining to fractions of the day/cycle/etc.
+	@_a1=();	#intermediate calculation data
+	@_at=();	#base-10 representation of cfilorux time
+  	@_at_cf=();	#base-n representation of time digits
+	@_ai=();	#counters
+	@_an=();	#base related data for day conversion
+	$_an[0]		=	($_cd0[1] > 1) ? $_cd0[1] : ($#_st + 1); 
+	@_ij=();	# counters
+#	$_dt=(2440587 + (2440587 + -2440587));	# delta-t adjustment for cfilorux zero
+	$_dt=(2440587 + (0 - 719164)); 
+#*---------------------------------*
+sub _pow{
+ 	 #basic integral power function
+  	my $_x=shift;
+  	my $_n=shift;
+  	my $_i0=$_n;
+  	my $_result=1;
+  	if($_x == 0){
+    		return(1);	#a necessary limiting assumption, for now
+  	}
+  	while($_i0 > 0){
+    		$_result *= $_x;
+    		$_i0--;
+  	}
+  	return($_result);
+}
+sub _get_nn{
+  	#returns the highest exponent of $1 that will divide into $0
+  	my $_x0=shift;
+  	my $_bn=shift;
+  	my $_i0=0;
+  	while($_x0 >= $_bn){
+    		$_x0 /= $_bn;
+    		$_i0++;
+  	}
+  	return($_i0);
+}
+sub _get_t_bn{
+  	#returns an array of ciflorux-like fractions in base-n
+  	my @_a1=();
+    	$_a1[0]=shift;
+  	my @_at=();
+  	my @_ai=();
+  	my @_an=(0,0,0,0,0,);
+    	$_an[0]=shift;
+    	$_an[1]=&_get_nn($_a1[0], $_an[0]);	#highest exponent of $_an[0] that divides into _a1[0]
+    	$_an[2]=$_an[1];	
+    	$_ai[0]=0;
+    
+  #
+  	while($_ai[0] <= $_an[1]){
+    	{use integer;
+      	$_at[$_ai[0]]=($_a1[$_ai[0]]/(&_pow($_an[0], $_an[2])));}
+    	$_a1[($_ai[0]+1)]=($_a1[$_ai[0]] - ($_at[($_ai[0])]*(&_pow($_an[0], $_an[2]))));
+    #
+    	$_ai[0]++;
+    	$_an[2]--;
+  	}
+  	return(@_at);
+}
+#
+#-----------------------------_1gnf4_2ha2v:l0elni
+	@__dat		=	();
+	@__t0z		=	();
+	$__t0z[0]	=	();
+#_1190xmvq--------------------------------------------------------
+#_cft1190xmw2:seinajoke_finland_e3:ud1118tembuxw0b4_171731415059:john_david_jones::
+#	the guys at databros have requested a binary that converts legacy timestamps
+#	to cfilorux timestamps::
+	$__t0z[0][0]	=	`date +"%s %N"`;
+	$__dat[0]	=	();
+	$__dat[0]	=	[ split(' ', $__t0z[0][0]) ];
+	$_a0[0]		=	$__dat[0][0];
+#--------------------------------------------
+#cft1191cjgiw:17173141505o:hamburg_germany::
+#needed the cft nanosecond, resurrected from n2c::
+#	$__dat[0]	=	();
+#	$__dat[0][0]	=	$ARGV[2] ? $ARGV[2] : 0;	#seconds since epoch, first level solution
+#	$__dat[0][1]	=	0;				#nanoseconds timer
+#	$_a0[0]		=	$__dat[0][0];
+###_1190xmvq-------------------------------------------------------
+#-----------------------------
+  	$_a0[1]=($_a0[0]/86400 + $_dt);		#integral days since epoch
+#-----*
+#  @_args=($_a0[1], $_a0[4]);
+#	print STDOUT "_";	#prepend underscore to output for timestamp
+	@_args=($_a0[1]);
+  	$_ij[0]=0;
+#cft1192nesv_johndavidjones_berlin__
+#adding functionality for arbitrary ratio arguments
+if(($ARGV[3] ne '')&&($ARGV[4])){$_ij[0] = ($#_args + 1);}
+#----------------------
+while($_ij[0] <= $#_args){
+	$_it=$_args[$_ij[0]++];
+	$_a1[0]=$_it;
+	$_an[1]=&_get_nn($_it, $_an[0]);
+	$_an[2]=$_an[1];	#decrement counter for $_an[1]
+	$_ai[0]=0;
+#----------------
+	@_at		=	();
+#----------------
+	while($_ai[0] <= $_an[1]){
+  		{use integer;
+    		$_at[($_ai[0])]=($_a1[$_ai[0]]/(&_pow($_an[0], $_an[2])));}
+  		$_a1[($_ai[0]+1)]=($_a1[$_ai[0]] - ($_at[($_ai[0])]*(&_pow($_an[0], $_an[2]))));
+  		#
+  		$_ai[0]++;
+  		$_an[2]--;
+	}
+#----------------------
+		@_at_cf		=	();
+#----------------------
+		for($_i0=0;($_i0 <= $_an[1]);$_i0++){
+  			$_at_cf[$_i0] = $_st[($_at[$_i0] % ($#_st + 1))];
+		}
+
+		foreach $_dt(@_at_cf){
+  			print $_dt;
+		}
+}#the new master loop:ul._:l0elni
+#	print STDOUT "_";	#interstitial underscore for timestamp
+#*---------------------------------*
+###
+#	divinf for fractional day
+#---------------------------
+#
+	@_ij1		=	();
+      	$_ij1[0]=0;
+      	$_ij1[1]=0;      # quotient counter
+      	$_ij1[2]=0;      # remainder counter
+#------------------------------------------_1gnf4_2r2p7:l0elni::
+# nanosecond clock
+#cft1192jbs8_17173141506v_11922iaj__johndavidjones
+#adding optional arguments for arbitrary ratio components
+	$_t01		=	($_a0[0] /86400);
+	$_ratio[0]	=	($ARGV[3] ne '') ? int($ARGV[3]) : ((($_a0[0] - ($_t01 * 86400)) * 1000000000) + $__dat[0][1] + $_gf0[0]);
+	$_ratio[1]	=	$ARGV[4]  ? int($ARGV[4]) : ((86400 * 1000000000) + $_gf0[1]); #must not be 0
+	@_quot		=	();
+	@_rmndr		=	();
+#
+      	while(($_ij1[1]<($_cd0[0] - 0))&&($_ratio[0] != 0)){
+        	$_ij1[0]=0;
+        	while(($_ratio[0]<$_ratio[1])&&($_ij1[1]<($_cd0[0]-0))){
+          		$_ratio[0]=($_ratio[0]*$_cd0[1]);
+          		$_ij1[0]++;
+          		if($_ij1[0]>1){
+            			$_quot[$_ij1[1]++]=0;
+          		}
+        	}
+        	$_quot[$_ij1[1]++]=($_ratio[0]/$_ratio[1]);
+        	$_ratio[0]=$_rmndr[$_ij1[2]++]=($_ratio[0]%$_ratio[1]);
+      	}
+#
+#	output section for fractional day
+	@_ij2		=	();
+	$_ij2[0]	=	0;
+	while($_ij2[0] < $_cd0[0]){
+		print STDOUT $_st[($_quot[$_ij2[0]] % ($#_st + 1))];
+		$_ij2[0]++;
+	}
+}#integer
+#-------------------------------------------------------------###
