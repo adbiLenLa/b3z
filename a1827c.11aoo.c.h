@@ -17,8 +17,10 @@ double a5d(double a5da);
 int pi(int piLa);
 int ka(int kaga, int kage);
 float kafa(float kafaa, float kafae);
+double kada(double kadaa, double kadae);
 int pa(int paga, int page);
 float pafa(float pafaa, float pafae);
+double pada(double padaa, double padae);
 int Ti(int Tiga, int Tige);
 int ku(int kuga, int kuge);
 float kufa(float kufaa, float kufae);
@@ -102,6 +104,9 @@ float kafa(float kafaa, float kafae){
   float	fokafa	= (kafaa + kafae);
  return(fokafa);
 }/* kafa */
+double kada(double kadaa, double kadae){
+    return(kadaa + kadae);
+}/* kada */
 int pa(int paga, int page){
     int	gopa	= (paga * page);
  return(gopa);
@@ -110,6 +115,9 @@ float pafa(float pafaa, float pafae){
   float	fopafa	= (pafaa * pafae);
  return(fopafa);
 }/* pafa */
+double pada(double padaa, double padae){
+    return(padaa * padae);
+}/* pada */
 int Ti(int Tiga, int Tige){
     int	goTi	= ku(Tiga, Tiga);
     int egiLa[3]	= {0, Tige, 1};
