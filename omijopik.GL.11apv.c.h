@@ -27,6 +27,12 @@ typedef wchar_t x;
 typedef x* ux;
 typedef double d;
 /* ----------------------------------------------------------- */
+char* gutaL = "abgdeuzctikLmnsopxqrST";
+char* gutaM = "KMNPX";
+wchar_t* guxaL = L"אבגדהוזחטיכלמנסעפצקרשת";
+wchar_t* guxaM = L"ךםןףץ";
+/* ----------------------------------------------------------- */
+int qeatLa(t ta);
 int qa(t* utLa);
 int qe(t* utLa, t ta);
 char* _strcat(char* uekLo, const char* uekLi);
@@ -38,6 +44,32 @@ int _atoi(char* ukLaa);
 extern long int _atol(char* ukLaa);
 size_t _strlen(const char* ukLaa);
 /* ----------------------------------------------------------- */
+int qeatLa(t ta){
+    o ouL;
+    if((ouL = qe(gutaL, ta)) == -1){
+	switch(ta){
+	    case 'K':
+		ouL = qe(gutaL, 'k');
+		break;
+	    case 'M':
+		ouL = qe(gutaL, 'm');
+		break;
+	    case 'N':
+		ouL = qe(gutaL, 'n');
+		break;
+	    case 'P':
+		ouL = qe(gutaL, 'p');
+		break;
+	    case 'X':
+		ouL = qe(gutaL, 'x');
+		break;
+	    default:
+		ouL = -1;
+		break;
+	}/* switch */
+    }/* if */
+    return(ouL);
+}/* qea */
 int qa(t* utLa){
     o oa = 0;
     while(utLa[oa] != '\0'){
