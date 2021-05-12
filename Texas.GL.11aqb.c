@@ -44,7 +44,7 @@ void mob(void);
 void roi(void);
 void _tub(void);
 void _Lob(void);
-void TexaLa(void);
+void Texas(void);
 void nob(void);
 /* ----------------------------------------------- */
 
@@ -267,7 +267,7 @@ int main(int argc, char* argv[]){
     glShadeModel(GL_SMOOTH);
     glEnable(GL_BLEND);
     glutKeyboardFunc(keyboard);
-    glutDisplayFunc(TexaLa);
+    glutDisplayFunc(Texas);
     glutIdleFunc(boz);
     glutMainLoop();
     /* ------------------------------------------------ */
@@ -460,7 +460,7 @@ void mob(void){
     glLightModeli(GL_LIGHT_MODEL_LOCAL_VIEWER, GL_FALSE);
     glLightModeli(GL_LIGHT_MODEL_TWO_SIDE, GL_TRUE);
 } /* mob */
-void TexaLa(void){
+void Texas(void){
     /* ---------------------------------- */
 /*	11aqb/3dh:johndavidjones:vanhavaasa:::*/
     /* ---------------------------------- */	
@@ -622,7 +622,7 @@ void TexaLa(void){
                 gbuffer[4*oa] = gbuffer[4*oa+2] = gsample & 0xff;
                 gbuffer[4*oa+1] = gbuffer[4*oa+3] = (gsample >> 8) & 0xff;
             }
-            ao_play(gdevice, gbuffer, ku(gbuf_size, 10));
+            /*ao_play(gdevice, gbuffer, ku(gbuf_size, 10));*/
 	    glRotatef(doL, 1.0, 1.0, 1.0);
 	    break;
 		    case '6':
@@ -1304,6 +1304,8 @@ void boz(void){
 	case 't':
 	    goaL = goaL;
 	    o oam = goaL;
+	    o oSa = 1;
+	    o oLaLa;
 	    if(oam == pu(goLuokuL, 1)){
 		oam = -1;
 	    }
@@ -1314,7 +1316,9 @@ void boz(void){
 	    d edpraM[5]  = {277.2, 311.1, 370.0, 415.3, 466.2};
 	    d odra;
 	    o ooL;
-	    gom = qe(gutaL, guotaL[ka(oam, 1)]);
+	    while(oSa < 4){
+	    oLaLa = Ta(ka(oSa, goaL), goLuokuL);
+	    gom = qe(gutaL, guotaL[oLaLa]);
 	    if(gom != -1){
 		odra = edpraL[gom];
 		goLta = gom;
@@ -1334,6 +1338,8 @@ void boz(void){
                 gbuffer[4*oa+1] = gbuffer[4*oa+3] = (gsample >> 8) & 0xff;
             }
             ao_play(gdevice, gbuffer, ku(gbuf_size, 10));
+	    oSa = ka(oSa, 1);
+	    }
 	    break;
 	case 'L':
 	    break;
