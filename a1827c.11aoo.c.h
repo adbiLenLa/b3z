@@ -7,6 +7,13 @@
 /* -------------------------------------------------------- */
 #define AA 1
 /* -------------------------------------------------------- */
+long TaL(long TaLa, long TaLe);
+long kaL(long kaLa, long kaLe);
+long paL(long paLa, long paLe);
+long TiL(long TiLa, long TiLe);
+long piL(long piLa);
+long kuL(long kuLa, long kuLe);
+long puL(long puLa, long puLe);
 int a0b(int a0bLa, int a0bLe);
 long a0L(long a0La, long a0Le);
 int Ta(int gaLa, int gaLe);
@@ -16,7 +23,9 @@ int a2(int a2La, int a2Le);
 int a2b(int a2bLa, int a2bLe);
 long a2L(long a2La, long a2Le);
 int a3(int a3La, int a3Le);
+long a3L(long a3La, long a3Le);
 int a5(int a5La);
+long a5L(long a5La);
 double a5d(double a5da);
 int pi(int piLa);
 int ka(int kaga, int kage);
@@ -39,7 +48,34 @@ long _a77L(long eLoTa[], long eLoku[], long aLiTr, long aLbn, long Laxn, long La
 int a8(int a8La, int a8Le);
 long a8L(long a8La, long a8Le);
 /* -------------------------------------------------------- */
-
+long TaL(long TaLa, long TaLe){
+    long oLTaL = a0L(TaLa, TaLe);
+    return(oLTaL);
+}/* TaL */
+long kaL(long kaLa, long kaLe){
+    long oLkaL = a1L(kaLa, kaLe);
+    return(oLkaL);
+}/* kaL */
+long paL(long paLa, long paLe){
+    long oLpaL = a2L(paLa, paLe);
+    return(oLpaL);
+}/* paL */
+long TiL(long TiLa, long TiLe){
+    long oLTiL = a3L(TiLa, TiLe);
+    return(oLTiL);
+}/* TiL */
+long piL(long piLa){
+    long oLpiL = a5L(piLa);
+    return(oLpiL);
+}/* piL */
+long kuL(long kuLa, long kuLe){
+    long oLkuL = a7L(kuLa, kuLe);
+    return(oLkuL);
+}/* kuL */
+long puL(long puLa, long puLe){
+    long oLpuL = a8L(puLa, puLe);
+    return(oLpuL);
+}/* puL */
 /* -------------------------------------------------------- */
 int a0b(int a0bLa, int a0bLe){
     int aLiaa0b		= 1;
@@ -132,6 +168,15 @@ int a3(int a3La, int a3Le){
   }
  return(aLua3);
 }/* a3 */
+long a3L(long a3La, long a3Le){
+    long aLua3	= a7L(a3La, a3La);
+    long eLia3[3]	= {0, a3Le, 1};
+  while(eLia3[0] 	< eLia3[1]){
+	aLua3		= a2L(aLua3, a3La);
+	eLia3[0]	= a1L(eLia3[0], eLia3[2]);
+  }
+ return(aLua3);
+}/* a3L */
 float kafa(float kafaa, float kafae){
   float	fokafa	= (kafaa + kafae);
  return(fokafa);
@@ -178,6 +223,16 @@ int a5(int a5La){
     eo[3] = ka(eo[0], ka(eo[1], eo[2]));
     return(pa(a5La, eo[3]));
 }/* a5 */
+long a5L(long a5La){
+    long eo[4];
+    eo[0] = a2L(-2, a7L(a5La, a5La));
+    eo[0] = a2L(eo[0], a7L(a8L(1, a5La), a1L(1, a5La)));
+    eo[0] = a7L(eo[0], a7L(a8L(1, a5La), a1L(1, a5La)));
+    eo[1] = 1;
+    eo[2] = a2L(-2, a7L(a8L(2, a7L(a1L(a5La, 1), a1L(a5La, 1))), 2));
+    eo[3] = a1L(eo[0], a1L(eo[1], eo[2]));
+    return(a2b(a5La, eo[3]));
+}/* a5L */
 double a5d(double a5da){
     int eo[4];
     eo[0] = a2b(-2, ku(a5da, a5da));
