@@ -19,6 +19,7 @@
 #include<GL/glut.h>
 #include<math.h>
 #include<ao/ao.h>
+#include<time.h>
 /* ----------------------------------------------------------- */
 typedef int o;
 typedef char t;
@@ -26,6 +27,7 @@ typedef t* ut;
 typedef wchar_t x;
 typedef x* ux;
 typedef double d;
+typedef long L;
 /* ----------------------------------------------------------- */
 char* gutaL = "abgdeuzctikLmnsopxqrST";
 char* gutaM = "KMNPX";

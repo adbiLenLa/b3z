@@ -472,7 +472,7 @@ void TexaLa(void){
     t* utLa = "0123456789abcdefghijkLmnopqrstuvwxyz";
     clockid_t clk_id = CLOCK_REALTIME;
     struct timespec oTsnaa;
-    o on, od, obn, oiTr;
+    /*o on, od, obn, oiTr;
     o oLaa;
     o ouLTa;
     obn	 = 36;
@@ -485,7 +485,23 @@ void TexaLa(void){
     o* uoLTa = (o*)malloc(pa(oiTr, sizeof(int)));
     o* uoLku = (o*)malloc(pa(oiTr, sizeof(int)));
     t* ukaku = (t*)malloc(pa(oiTr, sizeof(char)));
-    ouLTa = _a77(uoLTa, uoLku, oiTr, obn, on, od);
+    ouLTa = _a77(uoLTa, uoLku, oiTr, obn, on, od);*/
+    L on, od, obn, oiTr;
+    o oLaa;
+    L ouLTa;
+    obn  = 36;
+    oiTr = goiTr;
+
+    oLaa = clock_gettime(clk_id, &oTsnaa);
+    on   = a0L(oTsnaa.tv_sec, 86400);
+    on   = a2L(on, 1000);
+    on   = a1L(on, a0L(oTsnaa.tv_nsec, 1000));
+    od   = 86400000;
+    L* uoLTa = (L*)malloc(a2L(oiTr, sizeof(L)));
+    L* uoLku = (L*)malloc(a2L(oiTr, sizeof(L)));
+    t* ukaku = (t*)malloc(pa(oiTr, sizeof(char)));
+    ouLTa = _a77L(uoLTa, uoLku, oiTr, obn, on, od);
+    /* ---------------------------------------- */
     o oma = 0;
     while(oma < oiTr){
         ukaku[oma] = utLa[uoLku[oma]];

@@ -5,12 +5,16 @@
  *	copyright 2021, john david jones
  */
 /* -------------------------------------------------------- */
+#define AA 1
 /* -------------------------------------------------------- */
 int a0b(int a0bLa, int a0bLe);
+long a0L(long a0La, long a0Le);
 int Ta(int gaLa, int gaLe);
 int a1(int a1La, int a1Le);
+long a1L(long a1La, long a1Le);
 int a2(int a2La, int a2Le);
 int a2b(int a2bLa, int a2bLe);
+long a2L(long a2La, long a2Le);
 int a3(int a3La, int a3Le);
 int a5(int a5La);
 double a5d(double a5da);
@@ -29,9 +33,11 @@ int pu(int puga, int puge);
 float pufa(float pufaa, float pufae);
 double puda(double pudaa, double pudae);
 int a7b(int a7bLa, int a7bLe);
+long a7L(long a7La, long a7Le);
 int _a77(int egoTa[], int egoku[], int aLiTr, int aLbn, int aLxn, int aLxd);
-int _a77L(int egoTa[], int egoku[], int aLiTr, int aLbn, long long aLxn, long long aLxd);
+long _a77L(long eLoTa[], long eLoku[], long aLiTr, long aLbn, long Laxn, long Laxd);
 int a8(int a8La, int a8Le);
+long a8L(long a8La, long a8Le);
 /* -------------------------------------------------------- */
 
 /* -------------------------------------------------------- */
@@ -53,6 +59,24 @@ int a0b(int a0bLa, int a0bLe){
      }
  return(aLuaa0b);
 }/* a0b */
+long a0L(long a0bLa, long a0bLe){
+    long aLiaa0b		= 1;
+    long aLuaa0b		= 0;
+     if(a0bLa		< 0){
+	aLiaa0b		= a8L(0, aLiaa0b);
+	a0bLa		= a8L(0, a0bLa);
+     }
+     if(a0bLe 		< 0){
+	aLiaa0b		= a8L(0, aLiaa0b);
+	a0bLe		= a8L(0, a0bLe);
+     }
+     if(a0bLe		== 0){
+	aLuaa0b		= a2L(aLiaa0b, a0bLa);
+     } else {
+	aLuaa0b		= a2L(aLiaa0b, (a0bLa % a0bLe));
+     }
+ return(aLuaa0b);
+}/* a0L */
 int Ta(int gaLa, int gaLe){
     int goa	= a0b(gaLa, gaLe);
  return(goa);
@@ -62,6 +86,10 @@ int a1(int a1La, int a1Le){
     int aLua1	= (a1La + a1Le);
  return(aLua1);
 }/* a1 */
+long a1L(long a1La, long a1Le){
+    long aLua1L = (a1La + a1Le);
+    return(aLua1L);
+}/* a1L */
 int a2(int a2La, int a2Le){
     int	aLiaa2	= 1;
     int aLuaa2	= 0;
@@ -87,6 +115,10 @@ int a2b(int a2bLa, int a2bLe){
     int	aLuaa2b	= (a2bLa * a2bLe);
  return(aLuaa2b);
 }/* a2b */
+long a2L(long a2La, long a2Le){
+    long Luaa2L = (a2La * a2Le);
+    return(Luaa2L);
+}/* a2L */
 int ka(int kaga, int kage){
     int goka 	= (kaga + kage);
  return(goka);
@@ -182,6 +214,28 @@ double kuda(double kudaa, double kudae){
     }
     return(kudaa / kudae);
 }/* kuda */
+long a8L(long a8La, long a8Le){
+	return(a8La - a8Le);
+}/* a8L */
+long a7L(long a7bLa, long a7bLe){
+    long aLuaa7b	= 0;
+    long aLiaa7b = 1;
+     if(a7bLa < 0){
+	a7bLa	= a8L(0,a7bLa);
+	aLiaa7b	= a8L(0, aLiaa7b);
+     }
+     if(a7bLe 	< 0){
+	a7bLe	= a8L(0,a7bLe);
+	aLiaa7b	= a8L(0, aLiaa7b);
+     }
+     if(a7bLe	== 0){
+ return(0);
+     } else {
+	aLuaa7b	= (a7bLa / a7bLe);
+	aLuaa7b	= a2L(aLuaa7b, aLiaa7b);
+     }
+  return(aLuaa7b);
+}/* a7L */
 int a7b(int a7bLa, int a7bLe){
     int aLuaa7b	= 0;
     int aLiaa7b = 1;
@@ -239,7 +293,36 @@ int _a77(int egoTa[], int egoku[], int aLiTr, int aLbn, int aLxn, int aLxd){
   }
  return(eLie[0]);
 }/* _a77 */
-int _a77L(int egoTa[], int egoku[], int aLiTr, int aLbn, long long aLxn, long long aLxd){
+long _a77L(long egoTa[], long egoku[], long aLiTr, long aLbn, long aLxn, long aLxd){
+    long eLia[3]         = {0, aLiTr, 1};
+    long eLie[3]         = {0, -1, 1};
+    long aLi             = 0;
+  while(eLia[0]         < eLia[1]){
+        aLi             = 0;
+  while(aLxn            < aLxd){
+        aLxn            = a2L(aLxn, aLbn);
+        aLi             = a1L(aLi, 1);
+     if(aLi             > 1){
+     if(eLia[0]		< eLia[1]){
+        egoku[eLia[0]]  = 0;
+        eLia[0]         = a1L(eLia[0], eLia[2]);
+     if(eLia[0]		== eLia[1]){
+	return(eLie[0]);
+     }
+     } else {
+ return(eLie[0]);
+     }
+     }/* if */
+  }/* while */
+        egoku[eLia[0]]  = a7L(aLxn, aLxd);
+        aLxn            = a0L(aLxn, aLxd);
+        egoTa[eLie[0]]  = aLxn;
+        eLia[0]         = a1L(eLia[0], eLia[2]);
+        eLie[0]         = a1L(eLie[0], eLie[2]);
+  }
+ return(eLie[0]);
+}/* _a77L */
+int __a77L(int egoTa[], int egoku[], int aLiTr, int aLbn, long long aLxn, long long aLxd){
     int eLia[3]         = {0, aLiTr, 1};
     int eLie[3]         = {0, -1, 1};
     int aLi             = 0;
@@ -267,7 +350,7 @@ int _a77L(int egoTa[], int egoku[], int aLiTr, int aLbn, long long aLxn, long lo
         eLie[0]         = a1(eLie[0], eLie[2]);
   }
  return(eLie[0]);
-}/* _a77L */
+}/* __a77L */
 int a8(int a8La, int a8Le){
     int	aLua8	= (a8La - a8Le);
  return(aLua8);
