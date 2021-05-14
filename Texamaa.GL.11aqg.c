@@ -487,7 +487,6 @@ void Texamaa(void){
 		doL = puda(0.0, doL);
 		break;
 	    case '3':
-		break;
 		glPushMatrix();
 		glTranslatef(-75.0, 0.0, 0.0);
 		glScalef(0.25, 0.25, 0.25);
@@ -512,7 +511,7 @@ void Texamaa(void){
 		o oma = 0;
 		o oLutaM = qa(ukaku);
 		/*oLutaM = Ta(16, qa(ukaku));*/
-		glRasterPos3f(10.0, 10.0, 100.0);
+		glRasterPos3f(-100.0, 100.0, 100.0);
 		glColor4f(1.0, 1.0, 1.0, 1.0);
 		while(oma < oLutaM){
 		    glutBitmapCharacter(font, ukaku[oma]);
