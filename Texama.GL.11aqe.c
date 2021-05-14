@@ -236,7 +236,7 @@ int main(int argc, char* argv[]){
     goLgudroi = pu(goLuoTaL, 1);
     gudroi = (d*)malloc(pa(goLgudroi, sizeof(double)));
     for(int oa = 0;oa < goLgudroi;oa++){
-	gudroi[oa] = (double)Ta(pu(guoTaL[oa], guoTaL[oa + 1]), 100);
+	gudroi[oa] = (double)Ta(pu(guoTaL[oa], guoTaL[oa + 1]), 111);
     }
     /* ----------------------------------------------- */
     ao_initialize();
@@ -327,7 +327,7 @@ void nob(void){
    /* glMatrixMode(GL_PROJECTION);*/
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    glOrtho(-100.0, 100.0, -100.0, 100.0, -100.0, 100.0);
+    glOrtho(-111.0, 111.0, -111.0, 111.0, -111.0, 111.0);
     glScalef(0.75, 0.75, 0.75);
     glTranslatef(0.2, 0.2, 0.0);
     /* ----------------------------- */
@@ -521,7 +521,7 @@ void Texama(void){
     o oLgudroi = pu(ouLTa, 1);
     d* udroi = (d*)malloc(pa(oLgudroi, sizeof(double)));
     for(int oa = 0;oa < oLgudroi;oa++){
-	udroi[oa] = (double)Ta(pu(uLTa[oa], uLTa[oa + 1]), 100);
+	udroi[oa] = (double)Ta(pu(uLTa[oa], uLTa[oa + 1]), 111);
     }
     /* --------------------------------------- */
     if(oLgudroi >= 4){
@@ -654,7 +654,18 @@ void Texama(void){
             ao_play(gdevice, gbuffer, ku(gbuf_size, 10));
 	    glRotatef(doL, 1.0, 1.0, 1.0);
 	    break;
-		    case '6':
+	    case '6':
+	    goaL = goaL;
+	    /* guotaL */
+	    o* uotma = guotaL;
+	    o eoLma[] = {0, Ta(16, goiTr), 1};
+	    glPushMatrix();
+	    glTranslatef(-50.0, -50.0, 100.0);
+	    while(eoLma[0] < eoLma[1]){
+		glutStrokeCharacter(GLUT_STROKE_ROMAN, guotaL[eoLma[0]]);
+                eoLma[0] = ka(eoLma[0], eoLma[2]);
+	    }
+	    glPopMatrix();
 	    break;
 	    }/*switch */
 	oau = ka(oau, 1);

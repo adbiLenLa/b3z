@@ -236,7 +236,7 @@ int main(int argc, char* argv[]){
     goLgudroi = pu(goLuoTaL, 1);
     gudroi = (d*)malloc(pa(goLgudroi, sizeof(double)));
     for(int oa = 0;oa < goLgudroi;oa++){
-	gudroi[oa] = (double)Ta(pu(guoTaL[oa], guoTaL[oa + 1]), 100);
+	gudroi[oa] = (double)Ta(pu(guoTaL[oa], guoTaL[oa + 1]), 111);
     }
     /* ----------------------------------------------- */
     ao_initialize();
@@ -327,7 +327,7 @@ void nob(void){
    /* glMatrixMode(GL_PROJECTION);*/
     glMatrixMode(GL_MODELVIEW);
     glLoadIdentity();
-    glOrtho(-100.0, 100.0, -100.0, 100.0, -100.0, 100.0);
+    glOrtho(-111.0, 111.0, -111.0, 111.0, -111.0, 111.0);
     glScalef(0.75, 0.75, 0.75);
     glTranslatef(0.2, 0.2, 0.0);
     /* ----------------------------- */
@@ -522,7 +522,7 @@ void Texas(void){
     o oLgudroi = pu(ouLTa, 1);
     d* udroi = (d*)malloc(pa(oLgudroi, sizeof(double)));
     for(int oa = 0;oa < oLgudroi;oa++){
-	udroi[oa] = (double)Ta(pu(uoLTa[oa], uoLTa[oa + 1]), 100);
+	udroi[oa] = (double)Ta(pu(uoLTa[oa], uoLTa[oa + 1]), 111);
     }
     /* --------------------------------------- */
     if(oLgudroi >= 4){
