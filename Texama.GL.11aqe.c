@@ -192,6 +192,8 @@ int main(int argc, char* argv[]){
     goLuoTaL = _a77(guoTaL, guokuL, oLiTr, oabn, oaxn, oaxd);
     goLuoTaLa = _a77(guoTaLa, guokuLa, oLiTr, 3, oaxn, oaxd);
     o eotLa[2];
+    guokuL[0] = Ta(guokuL[0], oabn);
+    guokuLa[0] = Ta(guokuLa[0], 3);
     /*upoLa = fopen(ukLoa, "w");*/
     for(o oa=0;oa < oLiTr;oa++){
 	guotaL[oa] = gutaL[guokuL[oa]];
@@ -502,6 +504,7 @@ void Texama(void){
     L* uLku = (L*)malloc(paL(LoiTr, sizeof(L)));
     t* ukaku = (t*)malloc(paL(LoiTr, sizeof(char)));
     ouLTa = _a77L(uLTa, uLku, LoiTr, Lobn, Lon, Lod);
+    uLku[0] = Ta(uLku[0], Lobn);
     /* ----------------------------------------- */
     L Loma = 0;
     while(Loma < LoiTr){
