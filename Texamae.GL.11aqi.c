@@ -483,6 +483,7 @@ void Texamae(void){
     while(oau < LoiTr){
 	switch(ukaku[oau]){
 	    case '0':
+		    break;
 		oz = 0.0;
 		glPushMatrix();
 		glTranslatef(90.0, 0.0, 0.0);
