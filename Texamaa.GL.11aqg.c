@@ -141,6 +141,8 @@ int main(int argc, char* argv[]){
     guxaoL = (wchar_t*)malloc(a2b(oLiTr, sizeof(wchar_t)));
     gLuoTaL = _a77L(guLTaL, guLkuL, LoLiTr, Labn, Laxn, Laxd);
     gLuoTaLa = _a77L(guLTaLa, guLkuLa, LoLiTr, 3, Laxn, Laxd);
+    guLkuL[0] = TaL(guLkuL[0], Labn);
+    guLkuLa[0] = TaL(guLkuLa[0], 3);
     o eotLa[2];
     /*upoLa = fopen(ukLoa, "w");*/
     for(o oa=0;oa < oLiTr;oa++){
@@ -398,6 +400,7 @@ void Texamaa(void){
     L* uLku = (L*)malloc(paL(LoiTr, sizeof(L)));
     t* ukaku = (t*)malloc(paL(LoiTr, sizeof(char)));
     LuLTa = _a77L(uLTa, uLku, LoiTr, Lobn, Lon, Lod);
+    uLku[0] = TaL(uLku[0], Lobn);
     /* ----------------------------------------- */
     L Loma = 0;
     while(Loma < LoiTr){
