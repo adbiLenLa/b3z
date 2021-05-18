@@ -645,6 +645,7 @@ void boz(void){
     	    gLnaL = goTsLa.tv_nsec;
 	    break;
 	case 'g':
+	    break;
        	    clk_id	= CLOCK_REALTIME;
     	    goLaa = clock_gettime(clk_id, &goTsLa);
     	    gLdaL = goTsLa.tv_nsec;
@@ -711,6 +712,9 @@ void boz(void){
 	goaL = 0;
 	goam = 0;
 	/*printf("%ld:%ld\n", gLnaL, gLdaL);*/
+    clk_id	= CLOCK_REALTIME;
+    goLaa = clock_gettime(clk_id, &goTsLa);
+    gLdaL = goTsLa.tv_nsec;
     gLuoTaL = _a77L(guLTaL, guLkuL, gLiTr, gLbN, gLnaL, gLdaL);
     gLuoTaLa = _a77L(guLTaLa, guLkuLa, gLiTr, 3, gLnaL, gLdaL);
     guLkuL[0] = TaL(guLkuL[0], gLbN);
