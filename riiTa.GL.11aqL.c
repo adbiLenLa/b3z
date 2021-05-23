@@ -574,6 +574,8 @@ void ao(void){
 #define ZZ 1
         o gom;
     o goLta = 0;
+    o ggLan = 0;
+    o ggLad = 0;
 #define BOZ 1
 void bozriiTa(void){
     switch(guotaL[goaL]){
@@ -593,12 +595,13 @@ void bozriiTa(void){
     	    clk_id	= CLOCK_REALTIME;
     	    goLaa = clock_gettime(clk_id, &goTsLa);
     	    gLnaL = goTsLa.tv_nsec;
+	    ggLan = 1;
 	    break;
 	case 'g':
-	    break;
        	    clk_id	= CLOCK_REALTIME;
     	    goLaa = clock_gettime(clk_id, &goTsLa);
     	    gLdaL = goTsLa.tv_nsec;
+	    ggLad = 1;
 	    break;
 	case 't':
 	    goaL = goaL;
@@ -662,9 +665,11 @@ void bozriiTa(void){
 	goaL = 0;
 	goam = 0;
 	/*printf("%ld:%ld\n", gLnaL, gLdaL);*/
+    if((ggLan == 0)&&(ggLad == 0)){
     clk_id	= CLOCK_REALTIME;
     goLaa = clock_gettime(clk_id, &goTsLa);
     gLdaL = goTsLa.tv_nsec;
+    }
     gLuoTaL = _a77L(guLTaL, guLkuL, gLiTr, gLbN, gLnaL, gLdaL);
     gLuoTaLa = _a77L(guLTaLa, guLkuLa, gLiTr, 3, gLnaL, gLdaL);
     guLkuL[0] = TaL(guLkuL[0], gLbN);
@@ -708,6 +713,8 @@ void bozriiTa(void){
 	gudroi[oa] = (double)TaL(puL(guLTaL[oa], guLTaL[oa + 1]), 111);
     }
     }
+    ggLan = 0;
+    ggLad = 0;
     glutPostRedisplay();
  }/* bozriiTa */
 /* ---------------------------------------------------------- */
