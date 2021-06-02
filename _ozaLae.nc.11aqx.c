@@ -111,7 +111,7 @@ int main(int argc, char* argv[]){
    upoLa = fopen(ukLoa, "w");
     /* --------------------------- */
     goLaa = clock_gettime(clk_id, &oTsLa);
-    napms(125);
+    napms(6718);
     goLae = clock_gettime(clk_id, &oTsLe);
     gaxn	= oTsLa.tv_nsec;
     gaxn	= a7b(gaxn, 1000);
