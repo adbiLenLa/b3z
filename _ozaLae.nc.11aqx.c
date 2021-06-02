@@ -86,14 +86,14 @@ int main(int argc, char* argv[]){
     if(argc >= 3){
         gaiTr = _atoi(argv[2]);
     } 
-    int* ugTaLa;
-    int* ugkuLa;
+    long* ugTaLa;
+    long* ugkuLa;
     int* ugkaaL;
     wchar_t* uKaaL;
     int  giTr	= 100;
     int  gabn	= 22;
-    int  gaxn	= 177276;
-    int  gaxd	= 23175;
+    long  gaxn	= 177276;
+    long  gaxd	= 23175;
     int  goLa;
     int  gia, gay, gax;
     int  gik, giLa;
@@ -114,15 +114,15 @@ int main(int argc, char* argv[]){
     napms(6718);
     goLae = clock_gettime(clk_id, &oTsLe);
     gaxn	= oTsLa.tv_nsec;
-    gaxn	= a7b(gaxn, 1000);
+    gaxn	= a7b(gaxn, 1);
     gaxd	= oTsLe.tv_nsec;
-    gaxd 	= a7b(gaxd, 1000);
+    gaxd 	= a7b(gaxd, 1);
     if(argc == 5){
 	gaxn	= _atoi(argv[3]);
 	gaxd	= _atoi(argv[4]);
     }
     printf("%ld:%ld\n", oTsLa.tv_nsec, oTsLe.tv_nsec);
-    printf("%d:%d\n", gaxn, gaxd);
+    printf("%ld:%ld\n", gaxn, gaxd);
     /* --------------------------- */
     ao_initialize();
     gdefault_driver = ao_default_driver_id();
@@ -159,21 +159,21 @@ int main(int argc, char* argv[]){
  
     oLuotaL	= gaiTr;
     uotaL	= (int*)malloc(a2b(giTr, sizeof(int)));
-    ugTaLa	= (int*)malloc(a2b(giTr, sizeof(int)));
-    ugkuLa	= (int*)malloc(a2b(giTr, sizeof(int)));
+    ugTaLa	= (long*)malloc(a2b(giTr, sizeof(long)));
+    ugkuLa	= (long*)malloc(a2b(giTr, sizeof(long)));
     ugkaaL	= (int*)malloc(a2b(giTr, sizeof(int)));
     uKaaL	= (wchar_t*)malloc(a2b(giTr, sizeof(wchar_t)));
     uxaaL	= (wchar_t*)malloc(a2b(giTr, sizeof(wchar_t)));
 
-    goLa  	= _a77(ugTaLa, ugkuLa, giTr, gabn, gaxn, gaxd);
+    goLa  	= _a77L(ugTaLa, ugkuLa, giTr, gabn, gaxn, gaxd);
 
     uotaaL   = (int*)malloc(a2b(giTr, sizeof(int)));
-    int* ugTama	= (int*)malloc(a2b(giTr, sizeof(int)));
-    int* ugkuma	= (int*)malloc(a2b(giTr, sizeof(int)));
+    long* ugTama	= (long*)malloc(a2b(giTr, sizeof(long)));
+    long* ugkuma	= (long*)malloc(a2b(giTr, sizeof(long)));
     uxama = (wchar_t*)malloc(a2b(giTr, sizeof(wchar_t)));
 
-    int goma;
-    goma    = _a77(ugTama, ugkuma, giTr, 3, gaxn, gaxd);
+    long goma;
+    goma    = _a77L(ugTama, ugkuma, giTr, 3, gaxn, gaxd);
 
     ugkuma[0]   = a0b(ugkuma[0], 3);
     ugkuLa[0]	= a0b(ugkuLa[0], gabn);
