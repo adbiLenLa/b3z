@@ -36,6 +36,7 @@ typedef struct {
 /* ------------------------------------------------------- */
     o oLuotaL;
     o* uotaL;
+    o* uotaaL;
     ut utaL	=  "abgdeuzctikLmnsopxqrST";
     ux uxaL   = L"אבגדהוזחטיכלמנסעפצקרשת";
     ux uxaaL;
@@ -166,7 +167,7 @@ int main(int argc, char* argv[]){
 
     goLa  	= _a77(ugTaLa, ugkuLa, giTr, gabn, gaxn, gaxd);
 
-    int* uotaaL   = (int*)malloc(a2b(giTr, sizeof(int)));
+    uotaaL   = (int*)malloc(a2b(giTr, sizeof(int)));
     int* ugTama	= (int*)malloc(a2b(giTr, sizeof(int)));
     int* ugkuma	= (int*)malloc(a2b(giTr, sizeof(int)));
     uxama = (wchar_t*)malloc(a2b(giTr, sizeof(wchar_t)));
@@ -493,7 +494,7 @@ void TLq(p* upaL){
 }/* TLq */
 void dot(p* upeL){
     /*  ---------------- */
-    switch(uotaL[upeL->ox]){
+    switch(uotaaL[upeL->ox]){
 	case 'a':
 	    upeL->oam--;
 	    if(upeL->oam == -1){
