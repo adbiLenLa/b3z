@@ -476,7 +476,7 @@ n aL(bb bbaL){
 }/* aL */
 void TLq(p* upaL){
     Sma(upaL->bbaL, upaL->oaL, upaL->oam);
-    upaL->ot	= uotaL[upaL->ox];
+    upaL->ot	= uotaaL[upaL->ox];
     upaL->ox++;
     if(upaL->ox == oLuotaL){
 	upaL->ox	= 0;
