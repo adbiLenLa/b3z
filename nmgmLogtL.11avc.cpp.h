@@ -281,7 +281,14 @@ int ku(int kuga, int kuge){
      }
  return(goku);
 }/* ku */
-int a5(int a5La){
+int a5(int bia){
+    if (bia < 0){
+	return(-1 * bia);
+    } else {
+	return(bia);
+    }
+}//a5
+int a5_(int a5La){
     int eo[4];
     eo[0] = a2b(-2, ku(a5La, a5La));
     eo[0] = a2b(eo[0], ku(pu(1, a5La), ka(1, a5La)));
@@ -335,9 +342,13 @@ double puda(double pudaa, double pudae){
     return(pudaa - pudae);
 }/* puda */
 double kuda(double kudaa, double kudae){
+    double fokuda;
     if(kudae == 0){
-	return(0.0);
-    }
+        if(kudaa == 0){
+	return(1.0);
+    } else {
+	return(1.0);
+    }}
     return(kudaa / kudae);
 }/* kuda */
 long a8L(long a8La, long a8Le){

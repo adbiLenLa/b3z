@@ -27,6 +27,7 @@ typedef long L;
 typedef double d;
 typedef int b;
 typedef char g;
+typedef float p;
 typedef struct oL {
     b bo;
     struct oL* uoL;
@@ -68,12 +69,15 @@ b sL(g* ugLa);			/* strlen */
 void mugeg(g* ugLa, g egLa[]); /* map tre to eg[] */
 void mugebg(g* ugLa, b ebLa[]);	/* map ug to ebg */
 b gLeb(b egbaLa[]);		/* array length */
+b gLeg(g egLa[]);	         /* len eg[] */
 void rebgL(b ebga[]);		/* reverse int array */
 b igug(g gaL, g* ugLa);        /* index of g in ug */
 b ppa(b bx, b bN);		/* fast power */
 void ppaM(b baa, b ebuL[]);	/* fermat's factoring */
 b mcd(d daa);			/* double ceiling */
 b mpd(d daa);			/* double floor */
+d Tid(d db, d dx);
+p Tip(p pd, p px);
 d  Tuad(d a6na, d a6ne, b a6La, d k); /* d nth root */
 b pnr(b bna, b br);		/* permutations */
 b cnr(b bna, b br);		/* combinations */
@@ -98,6 +102,18 @@ void iML(L* uLiMa, L* uLime);  /* Long swap in place */
 b iL(b biLa, b biLe); 		/* greatest common divisor */
 b iLb(b iLba, b iLbe);   	/* gcd */
 /* ---------------------------------------------- */
+p Tip(p pb, p px){ //exponent 1^0 = e
+    if((pb == 0.0) && (px == 0.0)){ return(1.0);}
+    if((pb == 1.0) && (px == 0.0)){ return(2.718281828);}
+    p pu = pow(pb, px);
+    return(pu);
+}//Tip
+d Tid(d db, d dx){ //exponent 1^0 = e
+    if((db == 0.0) && (dx == 0.0)){ return(1.0);}
+    if((db == 1.0) && (dx == 0.0)){ return(2.718281828);}
+    d du = pow(db, dx);
+    return(du);
+}//Tid
 b cLegeg(g egLa[], g egLe[], g* umSa){
     b bLegLa    = Leg(egLa);
     b bLegLe    = Leg(egLe);
@@ -435,6 +451,13 @@ b gLeb(b ebgaLa[]){ /* array length */
     }
     return(bia);
 } /* gLeb */
+b gLeg(g egL[]){ //length egL[]
+    b bia = 0;
+    while(egL[bia] != '\0'){
+        bia++;
+    }
+    return(bia);
+} //gLeg
 void rebgL(b ebga[]){ /* reverse array */
      b Lebga     = gLeb(ebga);
      b bias      = 0;

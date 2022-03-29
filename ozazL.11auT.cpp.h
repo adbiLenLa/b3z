@@ -17,7 +17,7 @@
 //------------------STL
 #include<algorithm>
 //#include<array>
-//#include<chrono>
+#include<chrono>
 //#include<complex>
 //#include<fstream>
 //#include<future>
@@ -43,6 +43,7 @@ using namespace std;
 typedef int b;
 typedef char g;
 typedef float p;
+typedef string s;
 //------------------------------------
 const int* font=(int*)GLUT_BITMAP_TIMES_ROMAN_24;
 const int* font1=(int*)GLUT_BITMAP_HELVETICA_18;
@@ -50,18 +51,14 @@ const int* font1=(int*)GLUT_BITMAP_HELVETICA_18;
 void rbs(float x, float y, void *font,const char *string);
 void rbs3(float x, float y, float z, void *font,const char *string);
 b esoegi(string soa, g* egi);
-p Tipa(p piL, b bxp);
 //------------------------------------
+struct z{
+
+};
+struct zo : z{
+
+};
 //----------------------------------
-p Tipa(p piL, b bxp){
-    p pu = 1.0;
-    b bia = 0;
-    while(bia < bxp){
-        pu = pu * piL; 
-        bia++;
-    }   
-    return(pu);
-}//Tipa
 b esoegi(std::string soa, g* egi){ //special egi[3]
     b bopa = -1;
     b bLego = soa.length();
@@ -162,9 +159,38 @@ class eLTi{
 	}
 
 };//eLTi
+class co{
+    public:
+	p ep[3];
+	co(){}
+	co(p pa, p pe, p pu){
+	    ep[0] = pa;
+	    ep[1] = pe;
+	    ep[2] = pu;
+	}
+	void operator+=(const co& cora){
+	    ep[0] = ep[0] + cora.ep[0];
+	    ep[1] = ep[1] + cora.ep[1];
+	    ep[2] = ep[2] + cora.ep[2];
+	}
+	void operator-=(const co& cora){
+	    ep[0] = ep[0] - cora.ep[0];
+	    ep[1] = ep[1] - cora.ep[1];
+	    ep[2] = ep[2] - cora.ep[2];
+	}
+};
+class Lp{
+    public:
+	co eco[3];
 
+};
 //---------------------------------
 g egSag[23] = "abgdeuzctikLmnsopxqrST";
+p pxs = 1.0;
+p pis = 1.0;
+p pzs = 1.0;
+b bpaL = 1;
+p pok = 0.0;
 const b bLegSa = 23;
 const b bLego = 109;
 class a{
@@ -174,8 +200,14 @@ class a{
 	b boLn;
 	b boLd;
     }soL;
-    public:
     g ego[bLego];
+    p p2pi = (2.0 * 3.14159265);
+    p pn2pi = (-2.0 * 3.14159265);
+    p pdpia = kufa(p2pi ,1296.0);
+    p pia = 0.0;
+    p pii, pxa;
+    public:
+    g eegLa[4][8];
     a(){
 	 b bia = 0;
 	 while(bia < (bLegSa - 1)){
@@ -184,6 +216,84 @@ class a{
 	 }
 	 egSa[bia] = '\0';
     }
+    void xego(void){
+	b bL = 0;
+        b bi = 0;
+	while(ego[bi] != '\0'){ bi++;}
+	bL = bi;
+	bi = 0;
+	//pok = 0.0;
+	while(bi < bL){
+	    if(ego[bi] == 'a'){
+		pia = pn2pi;
+		while(pia < pok){
+		    pii = sin(pia); 
+		    pxa = cos(pia + pok);
+		    glBegin(GL_POINTS);
+			glVertex3f(pia, pxa, 0.0); 
+			glVertex3f(pxa, pii, 0.0);
+		    glEnd();
+		    pia += pdpia;
+		    //if(bpaL == 1) {glRotatef(kufa(p2pi, 22), pxs, pis, pzs);}
+		}
+		pia = pok;
+		while(pia < p2pi){
+		    pii = sin(pia); 
+		    pxa = cos(pia + pok);
+		    glBegin(GL_POINTS);
+			glVertex3f(pia, pxa, 0.0); 
+			glVertex3f(pxa, pii, 0.0);
+		    glEnd();
+		    pia += pdpia;
+		    //if(bpaL == 1) {glRotatef(kufa(p2pi, 22), pxs, pis, pzs);}
+		}
+		pok += (pdpia * 5.0);
+		if(pok > p2pi){pok = 0.0;}	
+	    }//a
+	    if(ego[bi] == 'n'){
+		glBegin(GL_LINES);
+		    glVertex3f(pn2pi, 0.0, 0.0);
+		    glVertex3f(p2pi, 0.0, 0.0);
+		    glVertex3f(0.0, pn2pi, 0.0);
+		    glVertex3f(0.0, p2pi, 0.0);
+		glEnd();
+		pia = pn2pi;
+		while(pia < p2pi){
+		    p pM = Tip(2.17828, pia);
+		    p puL = kufa(1.0, pia);
+		    p pgo = (cos(2.0 * pia) + 2.0 * cos(pia));
+		    p ppx = kufa((Tip(pia, 2) - 4.0), (pia - 2.0)); 
+		    p pxcsx = pafa(pia, cos(pia));
+		    p pmc = kufa((1.0 - cos(pia)), pia);
+		    p pX = kufa(pow(pia, 2), (1.0 - pow(pia, 2)));
+		    p pc = (5.0 * cos(kufa(3.14159, pia)));
+		    glBegin(GL_POINTS);
+		        //glVertex3f(pia, puL, 0.0);
+			//glVertex3f(pia, pM, 0.0);
+			//glVertex3f(pia, pgo, 0.0);
+			//glVertex3f(pia, ppx, 0.0);
+			glVertex3f(pia, pc, 0.0);
+			glVertex3f(pia, pX, 0.0);
+			//glVertex3f(pia, pxcsx, 0.0);
+			//glVertex3f(pia, pmc, 0.0);
+		//	glVertex3f(pia, kufa((pia + 2.0), (pia + 1.0)), 0.0);
+		    glEnd();		    
+		    pia += pdpia;
+		}
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		glOrtho(pn2pi, p2pi, pn2pi, p2pi, pn2pi, p2pi);
+	    }//n
+	    if(ego[bi] == 'i'){
+		Lp Lpa;
+		Lpa.eco[0].ep[0] = 0.217;
+		co coL;
+
+
+	    }//i
+	    bi++;
+	}//while	
+    }//xego
     void iego(g egi[]){
 	b bia = 0;
 	while(egi[bia] != '\0'){
@@ -198,15 +308,7 @@ class a{
     void iboLd(b ba){
 	soL.boLd = ba;
     }
-    class o{
-	protected:
-	    b ba;
-	public:
-	    o(b bsa){
-		ba = bsa;
-	    }
-    };
-    class e{
+        class e{
 
     };
     class u{
@@ -215,9 +317,293 @@ class a{
     class i{
 
     };
+    class o{
+	protected:
+	    b ba;
+	    g egz[bLegSa];
+	public:
+	    o(b bsa){
+		ba = bsa;
+	    }
+	    o(){}
+	    void iba(b baaL);
+	    b oba(void){ return(ba); }
+    };
+
+
+};//a
+void a::o::iba(b baaL){
+    ba = baaL;
+}
+//--------------------------------
+//--------------------------------
+b bo = 718;
+const b bLegSma = 93;
+class adM{
+    friend class ncS;
+    protected:
+        g egSM[bLegSma];
+	b bo;
+	p po;
+	string so;
+	b biiM = 93;
+	b bN   = 22;
+	g egS[23] = "abgdeuzctikLmnsopxqrST";
+	b ebTa[93];
+	b ebku[93];
+	b bTd = 86400000;
+	b biaTaa;
+	g egku[94];
+	enum xbo { RED, YELLOW, BLUE };
+    public://_x
+	b eb[5];
+	g* eug[13];
+	vector<string> _rso;
+	g eeg[4][108];
+	//---------------
+	adM (const g* ugSM, b boL){
+	    b bia = 0;
+	    while(bia < strlen(ugSM) && (bia < 92)){
+		egSM[bia] = ugSM[bia];
+		bia++;
+	    }
+
+	    this->egSM[bia] = '\0';
+	    bo = boL;
+	    //rbs3(3.14, 3.14, 0.0, (void *)font, ugSM);
+	    so = "boLieueaLestn";
+	}
+	b kuku(void){
+	    struct timeval time_now{};
+    	    gettimeofday(&time_now, nullptr);
+    	    b bTN = (time_now.tv_sec * 1000) + time_now.tv_usec;
+    	    b biaTaa = _a77(ebTa, ebku, biiM, 22, bTN, 86400000);
+    	    biaTaa = _a77(ebTa, ebku, biiM, 22, ebTa[7], ebTa[8]);
+    	    ebku[0] = Ta(ebku[0], 22);
+	    return(biaTaa);
+	}//kuku
+	void iSM(g ega[]){
+	    b bia = 0;
+	    b bie = 0;
+	    
+	    while(bia < strlen(ega) && (bia < 92)){
+		egSM[bia] = ega[bia];
+		bia++;
+	    }
+	    egSM[bia] = '\0';
+	}
+	char* oSM(void){ return(egSM); }
+	void iso( string soL ){
+	    so = soL;
+	}
+	string oso(void){
+	    return(so);
+	}	
+	b ogbo(void){
+	    return(::bo);
+	}
+	void seba(void){ //sort eb
+	    b bu = sizeof(eb)/sizeof(b);
+	    b bm  = eb[0];
+	    b bim = 0;
+	    b bi =  0;
+	    b bia = 0;
+	    while(bi < bu - 1){
+		bia = bi;
+		bm  = eb[bi];
+		bim = bi;
+	    while(bia < (bu - 0)){
+		if(eb[bia] < bm){
+		    bm = eb[bia];
+		    bim = bia;
+		}
+		bia++;
+	    }
+	    sP(eb[bi], eb[bim]);
+	    bi++;
+	    }
+
+	}//seba
+	void sP(b& rba, b& rbe){
+	    b bT = rba;
+	    rba  = rbe;
+	    rbe  = bT;
+	}
+
+};//adM
+//--------------------------------
+class cue;
+class ncS{
+    protected:
+	static const string soSMaL;
+	static const b boLieue = 718;
+	
+    public:
+	vector<string> rso;
+	vector<b> rbo;
+	vector<p> rpo;
+	g eg[1296];
+
+	ncS(){
+	}
+	void icuebo(cue& cuer, b boS);
+	void icuegSM(cue& cuer, string so);
+	void isocue(cue& cuer);
+	void irso(string sos){
+	    rso.push_back(sos);
+	}//irso
+	string orso(b bi){
+	    return(rso[bi]);
+	}//orso
+	void xso(void){
+	    rso.pop_back();
+	}//xso
+	void irbo(b bo){
+	    rbo.push_back(bo);
+	}//irbo
+	b orbo(b bi){
+	    return(rbo[bi]);
+	}//orbo
+	void xrbo(void){
+	    rbo.pop_back();
+	}//xrbo
+	void irpo(p po){
+	    rpo.push_back(po);
+	}//irpo
+	p orpo(b bi){
+	    return(rpo[bi]);
+	}//orpo
+	void xrpo(void){
+	    rpo.pop_back();
+	}//xrpo
+	void ieg(string soo){
+	    b bia = 0;
+	    while(bia < soo.length() && bia < 1295){
+	        eg[bia] = soo[bia];
+		bia++;
+	    }
+	    eg[bia] = '\0';
+	}//ieg
+};//ncS
+const string ncS::soSMaL = "abgdeuzctikLmnsopxqrST";
+//-------------------
+class square;
+class rectangle {
+    public:
+        void convert( square a);
+};
+class square{
+    friend class rectangle;
+    private:
+        b bo;
 
 };
-//--------------------------------
+void rectangle::convert (square a){
+    a.bo = 718;
+}
+//-------------------
+class cue{
+    friend class ncS;
+    protected:
+	g egSM[93];
+	b bo;
+    public:
+	string socue;
+	vector<adM> radM;
+	cue(){}
+	void iadM(adM adMa){
+	    radM.push_back(adMa);
+	}
+        void iegug(g eg[], const g* ug){
+	    b bia = 0;
+	    b bz  = strlen(ug);
+	    while(bia < bz){
+		eg[bia] = ug[bia];
+		bia++;
+	    }
+	    eg[bia] = '\0';
+	}
+        adM& operator[](b bi){
+	    return(radM[bi]);
+	}
+        	
+
+};//cue
+void ncS::icuebo(cue& cuer, b boS){
+    cuer.bo = boS;
+}
+void ncS::icuegSM(cue& cuer, string so){
+    b bia = 0;
+    while(bia < so.length() && bia < 92){
+	cuer.egSM[bia] = so[bia];
+	bia++;
+    }
+    cuer.egSM[bia] = '\0';
+}//icuegSM
+void ncS::isocue(cue& cuer){
+    b bia = 0;
+    cuer.socue = cuer.egSM;
+}//isocue
+//---------------------------------
+class kmr :public ncS{
+    private:
+	s soSM;
+    public:
+	kmr* ucmrL;
+	kmr* ucmrr;
+	vector<co> rco;
+	p eep[1296][3];
+	b beep = 0;
+	//-------------------
+	kmr(){soSM = "ozazL";}
+	kmr(s si){ soSM = si; }
+	void zeep(void){
+	    b bia = 0;
+	    b bie = 0;
+	    while(bia < 1296){
+		bie = 0;
+		while(bie < 3){
+		    eep[bia][bie] = 0.0;
+		    bie++;
+		}
+		bia++;
+	    }
+	}//zeep
+	void iep(p px, p pi, p pz){
+	    eep[beep][0] = px;
+	    eep[beep][1] = pi;
+	    eep[beep][2] = pz;
+	    beep++;
+	    if(beep >= 1296){ beep = 1295; }
+	}//iep
+	void iepi(b bip, b bx, b bi, b bz){
+	    if(bip < 1296){
+		eep[bip][0] = bx;
+		eep[bip][1] = bi;
+		eep[bip][2] = bz;
+	    }
+	}//iepi
+	void ibeep(b bi){
+	    if(bi < 1296){
+		beep = bi;
+	    }
+	}//ibeep
+	void deep(void){
+	    b bi = 0;
+	    glPolygonMode(GL_FRONT, GL_LINE);
+	    glPolygonMode(GL_BACK, GL_LINE);
+	    glPointSize(5.0);
+	    glBegin(GL_POINTS);
+		while(bi < beep){
+		    glVertex3fv(eep[bi]);
+		    bi++;
+		}
+	    glEnd();
+	    glPointSize(1.0);
+	}//deep
+};//kmr
+
+//---------------------------------
 const b bmx	= 109;
 const b bLgSa   = 23;
 g egSa[bLgSa] = "abgdeuzctikLmnsopxqrST";
