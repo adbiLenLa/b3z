@@ -23,7 +23,7 @@ gd['p_cLr'] = (255, 0, 255)
 gd['numE'] = 50
 gd['dx'] = 5
 gd['dy'] = 5
-gd['bRad'] = 33  #baLL radius
+gd['bRad'] = 23  #baLL radius
 gd['bCLr'] = (255, 0, 0)
 gd['hiscr'] = 0
 class BaLL(pygame.sprite.Sprite):
@@ -96,7 +96,7 @@ class Player(pygame.sprite.Sprite):
         pos = pygame.mouse.get_pos()
  
         # Set the player x position to the mouse x position
-        self.rect.x = pos[0]
+        self.rect.x = (pos[0] -10)
  
  
 class Bullet(pygame.sprite.Sprite):
@@ -216,7 +216,7 @@ while not done:
             # Fire a bullet if the user clicks the mouse button
             bullet = Bullet()
             # Set the bullet so it is where the player is
-            bullet.rect.x = player.rect.x
+            bullet.rect.x = (player.rect.x + 10)
             bullet.rect.y = player.rect.y
             # Add the bullet to the lists
             all_sprites_list.add(bullet)
@@ -235,6 +235,8 @@ while not done:
     sTL1_e0.set(su)
     #--
     if ba == 0:
+        if score == 0:
+            gd['hiscr'] = 0
         if score > gd['hiscr']:
             gd['hiscr'] = score
             #print(f'{score}')
