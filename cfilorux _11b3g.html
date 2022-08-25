@@ -1,0 +1,373 @@
+<html>
+<head><title>clock_11aTq</title>
+<meta charset="UTF-8" />
+<!--
+it is the day 11b3b.  a five digit day gives a unique name for every day in over 165000 years.
+
+it is the day 119fm. we are in helsinki with arto and rauni.
+i noticed on the plane from tokyo that the unicode was acting
+strange, so added today the meta tag.
+-->
+<!-- copyright 2014. ds zodiac oy/inc, all rights reserved:
+the cfilorux base-36 clock/calendar technology is protected
+by trademark and patent mechanisms in various jurisdictions,
+including the United States.: US8379489
+john_david_jones::
+-->
+<script>
+var _4msg = ["",];
+</script>
+<style>
+body{
+background:#000000;
+color:#00ff00;
+}
+#_1gnjt_rx31z{
+background:#ffffff;
+}
+#_1gnjv_umumi{
+background:#000000;
+}
+input{
+background: #000000;
+color: #ffffff;
+}
+</style>
+<head>
+<body>
+<form id='ca' method='post' action='clock_a55n8s.html'>
+<input type='submit' name='caca' value='ti0'>
+<input type='text' name='zica0' value='36' size='3'>
+<input type='text' name='zica1' value='36' size='3'>
+<input type='text' name='zica2' value='10' size='3'>
+<input type='text' name='zica3' value='0' size='3'>
+<input type='text' name='zica4' value='1' size='3'>
+<input type='text' name='zica5' value='16' size='3'>
+<hr />
+<input type='text' name='zica6' value='0123456789abcdefghijklmnopqrstuvwxyz' size='43'><br />
+<input type='text' name='zuca0' value='23' size='3'>
+<input type='text' name='zuca1' value='1' size='3'>
+<input type='text' name='zuca2' value='1' size='3'>
+<hr />
+<input type='text' name='zaca0' value='0' size='3'>
+<input type='text' name='zaca1' value='9' size='3'>
+<input type='text' name='zaca2' value='1' size='3'>
+<input type='text' name='zaca3' value='-1' size='3'>
+<input type='text' name='zaca4' value='1' size='3'>
+<hr />
+</form>
+<script>
+var _4t00 = [];
+//----------------------------------------
+//--------_cft1190b9a89
+//--------_cft1192ilo
+var _zica = [];
+_zica[0] = parseInt('36'); //base of calculation
+_zica[1] = parseInt('36'); //rendering geometry
+_zica[2] = parseInt('10'); //number of elementshands
+_zica[3] = parseInt('0'); //start index
+_zica[4] = parseInt('1'); //tick modulus
+_zica[5] = parseInt('16'); //milisecond timeout
+_zica[6] = '0123456789abcdefghijkLmnopqrstuvwxyz'; //lookup table
+var _zuca = [];
+_zuca[0] = parseInt('23'); //digits in expansion
+_zuca[1] = parseInt('1'); //continuity flag
+_zuca[2] = parseInt('1'); //requestAnimationFrame flag
+var _zaca = [];
+_zaca[0] = parseInt('0'); //nondeterministic
+_zaca[1] = parseInt('9');
+_zaca[2] = parseInt('1');
+_zaca[3] = parseInt('-1');
+_zaca[4] = parseInt('1');
+_zaca[4] = (_zaca[4] / Math.abs(_zaca[4])); //exponential growth possible, otherwise
+//---------_cft1192imat
+//----------------------------------
+var _1xf0 = [_zuca[1],_zuca[2]];	//control_flags
+var _1xc0 = [];
+_1xc0[0] = _zica[3];	//index of first element to render
+_1xc0[1] = _zica[2];	//number of elements to render _4dc2[0]
+_1xc0[2] = _zuca[0];	//number of elemets to generate _4cd0[0]
+_1xc0[3] = _zica[0];	//base of calculation
+_1xc0[4] = _zica[1];	//base of rendering
+//---------------------
+var _4dc2 = [_1xc0[1],8];
+//var _4gf0 = [0,9,1,-1,1,];
+var _4gf0 = _zaca; //nondeterministic controls
+var _4i00=[];
+var _4q00=[];
+_4q00[0]=_4t00[4];
+_4q00[1]=86400000;
+//_1gnnf:_1gnlz_x8ll4:_epoch_clock
+var _4q10 = [_1xc0[3],5,1721423,86400000,];
+_4q10[1] = (Math.floor( 4 * Math.log(36) / Math.log(_1xc0[3])) + 1);
+//var _4q10 = [36,5,1721423,86400000,]; //days in epoch 1192sz
+//_1gnnf:###::
+var _4a00=[];
+var _4cd0=[_1xc0[2],_1xc0[4],_zica[4],_zica[5],1,];
+var _4sw1=['0','1','2','3','4','5',
+'6','7','8','9','a','b',
+'C','d','e','F','g','h',
+'i','j','k','L','m','n',
+'o','p','q','R','s','t',
+'U','v','w','X','y','z',];
+var _4sw0= _zica[6].split("");
+//-----------------------------------------
+function _5330z() {
+_4t00[0] = new Date();
+_4t00[1] = _4t00[0].getTime();
+_4t00[2] = _4t00[1]/86400000;
+_4t00[3] = Math.floor(_4t00[2]);
+_4t00[4] = (_4t00[0] - (_4t00[3] * 86400000));
+//_4q00[0] = _4t00[4];
+//var _4gf0 = [0,1,1,];
+//_4q00[0] = _4t00[4] + Math.floor(_4gf0[0]/_4gf0[1])*_4gf0[2];
+//_1gnnf:_1gnlz_x8ll4:epoch_calendar::
+_4q00[0] = _4t00[1] + (_4q10[2] * _4q10[3]);
+_4q00[0] = _4q00[0] + Math.floor(_4gf0[0]/_4gf0[1])*_4gf0[2];
+_4q00[1] = _4q10[3] * Math.pow(_4q10[0],_4q10[1]);
+_4q00[0] = (_4q00[0] % _4q00[1]);
+//_1gnnf:###::
+while(_4q00[0] < 0){
+_4q00[0] = (_4q00[1] + _4q00[0]);
+}//if
+//
+//_1gnmz:consider:_4q00[0](_4q00[1]) overflow modulus::nQnQ::
+//
+_4a00 = [];
+_4i00[0]=0;
+while(_4i00[0] < _4cd0[0]) {
+_4i00[1]=0;
+while((_4q00[0] < _4q00[1]) && (_4q00[0] != 0)) {
+_4q00[0] = (_4q00[0] * _4cd0[1]);
+_4i00[1] = (_4i00[1] + 1);
+if(_4i00[1] > 1) {
+_4a00[_4i00[0]]=0;
+_4i00[0]=(_4i00[0] + 1);
+}
+}
+_4a00[_4i00[0]]=Math.floor(_4q00[0] / _4q00[1]);
+_4q00[0]=(_4q00[0] % _4q00[1]);
+_4i00[0]=(_4i00[0] + 1);
+}
+//_1gnmz:_w6507:nQnQ:javascript memory leak
+//_4t00[0]= null;
+delete _4t00[0];
+}//_5330z
+_5330z();
+document.write("<br />");
+</script>
+<center>
+CFILORUX&#0153<br />
+<a href='via119fmhu7.php'>
+<canvas id='_1gnjv_umumi' width='400' height='400'></canvas>
+</a>
+</center>
+<script>
+//----------------------------------------------------
+var _4cv0=[];
+_4cv0[0]=document.getElementById('_1gnjv_umumi');
+_4cv0[1]=_4cv0[0].getContext('2d');
+_4cv0[1].fillStyle='#ffffff';
+_4cv0[1].strokeStyle='#ffffff';
+var _4dc0 = [150,];
+var _4dc1 = [136, Math.PI*3/2,];
+//var _4dc2 = [10,];
+var _4hr0 = [63, 88, 108, 121, 175, 180, 185, 190, 195, 200,];
+var _4dhx = [_4sw0.length, Math.PI*3/2,];
+var _4ct0 = _4sw0;
+var _4ct1=[];
+_4ct1[0]=0;
+//-------------_cft1190gsh3k:ud1118tembuxw0b4:
+//generalize geometry
+// _4ct1[1]=(Math.PI/18);
+_4ct1[1]=(2 * Math.PI / _4cd0[1]);
+// _4ct1[2]=(_4ct1[1]/36);
+_4ct1[2]=(_4ct1[1]/_4cd0[1]);
+//-----------------------------------------------------
+function _53dc0() {
+_4cv0[1].beginPath();
+_4cv0[1].arc(_4cv0[0].width/2, _4cv0[0].height/2, _4dc0[0], 0, Math.PI*2, false);
+_4cv0[1].closePath();
+_4cv0[1].stroke();
+}
+function _53dc1() {
+var _4fi0=[];
+//-----------------------
+_4fi0[0]=0;
+//-----------------------
+_4cv0[1].font = '12pt Arial';
+while(_4fi0[0] < (_4cd0[1] % (_zica[1] + 1))) {
+_4ct1[0] = (((_4fi0[0] * 1) * _4ct1[1]) + _4dc1[1]);
+_4cv0[1].fillText(_4sw0[(_4fi0[0] % _4sw0.length)],
+_4cv0[0].width/2 + Math.cos(_4ct1[0]) * _4dc1[0] - _4cv0[1].measureText(_4ct0[(_4fi0[0] % _4ct0.length)]).width/2,
+_4cv0[0].height/2 + Math.sin(_4ct1[0]) * _4dc1[0] + 5);
+_4fi0[0] = (_4fi0[0] + 1);
+}//while
+}
+function _53dhx() {
+var _4fi0 = [];
+_4fi0[0] = _1xc0[0];
+//------------------_1190h
+_4fi0[1] = 0;
+//------------------
+var _4ctd = [];
+while(_4fi0[0] < _4dc2[0] + _1xc0[0]) {
+_4ct1[0] = ((_4a00[_4fi0[0]] * _4ct1[1]) + (_4a00[_4fi0[0] + 1] * _4ct1[2]) + _4dhx[1]) ;
+_4cv0[1].moveTo(_4cv0[0].width/2, _4cv0[0].height/2);
+_4cv0[1].lineTo( _4cv0[0].width/2 + Math.cos(_4ct1[0]) * _4hr0[_4fi0[1]],
+_4cv0[0].height/2 + Math.sin(_4ct1[0]) * _4hr0[_4fi0[1]]);
+_4cv0[1].stroke();
+//digital_data
+_4ctd[_4fi0[0]] = _4sw0[(_4a00[_4fi0[0]] % _4dhx[0])];
+//
+_4fi0[0] = (_4fi0[0] + 1);
+_4fi0[1] = (_4fi0[1] + 1);
+}//while
+//--------_cft1190b95w
+//setting digital to render past analog index for continuity of expression:jdj17173::
+if(_1xf0[0] == 1){
+_4ctd[_4fi0[0]] = _4sw0[(_4a00[_4fi0[0]] % _4dhx[0])];
+}
+//---------------
+_4cv0[1].font = '24pt arial';
+_4cv0[1].fillText(_4ctd.join(""), 13, 26);
+}
+function _53dcd() {;}
+function _53ix0() {
+//_1gnm9::_0_1gnlz_x8ll4
+//tictoc movement for low-power devices
+//cft1192r4c4_171731415073_11922iaj__johndavidjones
+//creating inline vesion to optimize thread turbulence
+//------------------------------------
+// _5330z();
+//function _5330z() {
+_4t00[0] = new Date();
+_4t00[1] = _4t00[0].getTime();
+_4t00[2] = _4t00[1]/86400000;
+_4t00[3] = Math.floor(_4t00[2]);
+_4t00[4] = (_4t00[0] - (_4t00[3] * 86400000));
+//_4q00[0] = _4t00[4];
+//var _4gf0 = [0,1,1,];
+//_4q00[0] = _4t00[4] + Math.floor(_4gf0[0]/_4gf0[1])*_4gf0[2];
+//_1gnnf:_1gnlz_x8ll4:epoch_calendar::
+_4q00[0] = _4t00[1] + (_4q10[2] * _4q10[3]);
+_4q00[0] = _4q00[0] + Math.floor(_4gf0[0]/_4gf0[1])*_4gf0[2];
+_4q00[1] = _4q10[3] * Math.pow(_4q10[0],_4q10[1]);
+_4q00[0] = (_4q00[0] % _4q00[1]);
+//_1gnnf:###::
+while(_4q00[0] < 0){
+_4q00[0] = (_4q00[1] + _4q00[0]);
+}//if
+//
+//_1gnmz:consider:_4q00[0](_4q00[1]) overflow modulus::nQnQ::
+//
+_4a00 = [];
+_4i00[0]=0;
+while(_4i00[0] < _4cd0[0]) {
+_4i00[1]=0;
+while((_4q00[0] < _4q00[1]) && (_4q00[0] != 0)) {
+_4q00[0] = (_4q00[0] * _4cd0[1]);
+_4i00[1] = (_4i00[1] + 1);
+if(_4i00[1] > 1) {
+_4a00[_4i00[0]]=0;
+_4i00[0]=(_4i00[0] + 1);
+}
+}
+_4a00[_4i00[0]]=Math.floor(_4q00[0] / _4q00[1]);
+_4q00[0]=(_4q00[0] % _4q00[1]);
+_4i00[0]=(_4i00[0] + 1);
+}
+//_1gnmz:_w6507:nQnQ:javascript memory leak
+//_4t00[0]= null;
+delete _4t00[0]; //11aTq
+//}//_5330z
+//------------------------------------5330z
+if((_4a00[_4dc2[1]] % _4cd0[2]) == 0){
+_4cv0[1].clearRect(0,0,_4cv0[0].width,_4cv0[0].height);
+//
+if((_4a00[4] % 36) >= 0){
+_4gf0[3] = ( _4gf0[4] * _4gf0[3] );
+}//if
+_4gf0[0] = ((((_4a00[4] % 36) - 18) % 19) + (_4gf0[3])*18 );
+//---------------------------------
+//cft1192r7hw----------------------
+// _53dc0();
+//function _53dc0() {
+_4cv0[1].beginPath();
+_4cv0[1].arc(_4cv0[0].width/2, _4cv0[0].height/2, _4dc0[0], 0, Math.PI*2, false);
+_4cv0[1].closePath();
+_4cv0[1].stroke();
+//}//_53dc0
+//---------------------------_53dc0
+//cft1192r7kp----------------
+// _53dc1();
+//function _53dc1() {
+var _4fi0=[];
+//-----------------------
+_4fi0[0]=0;
+//-----------------------
+_4cv0[1].font = '12pt Arial';
+while(_4fi0[0] < (_4cd0[1] % (_zica[1] + 1))) {
+_4ct1[0] = (((_4fi0[0] * 1) * _4ct1[1]) + _4dc1[1]);
+_4cv0[1].fillText(_4sw0[(_4fi0[0] % _4sw0.length)],
+_4cv0[0].width/2 + Math.cos(_4ct1[0]) * _4dc1[0] - _4cv0[1].measureText(_4ct0[(_4fi0[0] % _4ct0.length)]).width/2,
+_4cv0[0].height/2 + Math.sin(_4ct1[0]) * _4dc1[0] + 5);
+_4fi0[0] = (_4fi0[0] + 1);
+}//while
+//}//_53dc1
+//---------------------------_53dc1
+//_5330z();
+//cft1192r7nz----------------
+// _53dhx();
+//function _53dhx() {
+var _4fi0 = [];
+_4fi0[0] = _1xc0[0];
+//------------------_1190h
+_4fi0[1] = 0;
+//------------------
+var _4ctd = [];
+while(_4fi0[0] < _4dc2[0] + _1xc0[0]) {
+_4ct1[0] = ((_4a00[_4fi0[0]] * _4ct1[1]) + (_4a00[_4fi0[0] + 1] * _4ct1[2]) + _4dhx[1]) ;
+_4cv0[1].moveTo(_4cv0[0].width/2, _4cv0[0].height/2);
+_4cv0[1].lineTo( _4cv0[0].width/2 + Math.cos(_4ct1[0]) * _4hr0[_4fi0[1]],
+_4cv0[0].height/2 + Math.sin(_4ct1[0]) * _4hr0[_4fi0[1]]);
+_4cv0[1].stroke();
+//digital_data
+_4ctd[_4fi0[0]] = _4sw0[(_4a00[_4fi0[0]] % _4dhx[0])];
+//
+_4fi0[0] = (_4fi0[0] + 1);
+_4fi0[1] = (_4fi0[1] + 1);
+}//while
+//--------_cft1190b95w
+//setting digital to render past analog index for continuity of expression:jdj17173::
+if(_1xf0[0] == 1){
+_4ctd[_4fi0[0]] = _4sw0[(_4a00[_4fi0[0]] % _4dhx[0])];
+}
+//---------------
+_4cv0[1].font = '24pt arial';
+_4cv0[1].fillText(_4ctd.join(""), 13, 26);
+//}//_53dhx
+//---------------------------_53dhx
+//------------------------------------------
+//cft1191rmn6_1191h1010_171731415063__
+//johndavidjones
+//version with requestAnimationFrame
+if(_zuca[2] == 1){
+window.requestAnimationFrame(_53ix0);
+}
+}//if_tic_toc
+}
+//_53ix0();
+if(_zuca[2] == 1){
+window.requestAnimationFrame(_53ix0);
+} else {
+setInterval(_53ix0, _4cd0[3]/_4cd0[4]);
+}
+</script>
+<!-- _1gnmj:nQnQ:: -->
+<script>
+//alert(_4msg[0]);
+</script>
+</center>
+</body>
+</html>
